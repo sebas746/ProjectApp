@@ -5,6 +5,16 @@ VisualStudioVersion = 15.0.28307.421
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApi", "WebApi\WebApi.csproj", "{0E5D3A85-0925-447E-AE39-C21D7E903D4F}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01. App", "01. App", "{BA35D5CF-7ED8-4736-AC4D-993F0BE06A81}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "04. DAC", "04. DAC", "{35D8F08B-8F25-4400-92BD-0C6425171E9A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "02. Service", "02. Service", "{FB1C4730-375D-4B1D-A907-E4ECFCE0DBF8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "03. Domain", "03. Domain", "{27616FEF-1EB7-4FCC-B866-AD1534D0FCB6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "05. Test", "05. Test", "{14D49EAC-2B65-4435-B25C-9A193986CCE3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,6 +28,9 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{0E5D3A85-0925-447E-AE39-C21D7E903D4F} = {BA35D5CF-7ED8-4736-AC4D-993F0BE06A81}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {6C662774-62D7-4096-8C2C-2640AFE55FD7}
