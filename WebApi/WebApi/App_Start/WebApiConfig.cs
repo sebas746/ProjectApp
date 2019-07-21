@@ -2,6 +2,14 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
+using System.Web.Http.Cors;
+using Unity;
+using WebApi.App_Start;
+using WebApp.DataAccess;
+using WebApp.Interfaces.DAC;
+using WebApp.Interfaces.Service;
+using WebApp.Services;
+
 
 namespace WebApi
 {
@@ -9,7 +17,18 @@ namespace WebApi
     {
         public static void Register(HttpConfiguration config)
         {
+            // Configuración y servicios de API web
+            config.EnableCors(new EnableCorsAttribute("*", "*", "*"));
+
             // Web API configuration and services
+
+            var container = new UnityContainer();
+
+            //Register Account Dependencies
+            container.RegisterType<IAccountService, AccountService>();
+            container.RegisterType<IAccountsDAC, AccountsDAC>();
+
+            config.DependencyResolver = new UnityResolver(container);
 
             // Web API routes
             config.MapHttpAttributeRoutes();
