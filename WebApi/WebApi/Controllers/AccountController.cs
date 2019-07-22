@@ -26,11 +26,11 @@ namespace WebApi.Controllers
             return Ok(response);
         }
 
-        [HttpGet]
+        [HttpPost]
         [Route("api/Account/ValidateUser/")]
-        public IHttpActionResult ValidateUser(string username, string password)
+        public IHttpActionResult ValidateUser(User user)
         {
-            var response = _AccountService.ValidateUser(username, password);
+            var response = _AccountService.ValidateUser(user.Username, user.Password);
             return Ok(response);
         }
 
