@@ -50,6 +50,10 @@
       <Project>{9AED2E16-4F83-4E9F-B9CE-357695E1644C}</Project>
       <Name>WebApp.DataContext</Name>
     </ProjectReference>
+    <ProjectReference Include="..\WebApp.Entities\WebApp.Entities.csproj">
+      <Project>{57566793-7429-4228-B92B-636158D47C20}</Project>
+      <Name>WebApp.Entities</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -33,5 +33,13 @@ namespace WebApi.Controllers
             var response = _AccountService.ValidateUser(username, password);
             return Ok(response);
         }
+
+        [HttpGet]
+        [Route("api/Account/ValidateToken/")]
+        public IHttpActionResult ValidateToken(string username, string token)
+        {
+            var response = _AccountService.ValidateToken(username, token);
+            return Ok(response);
+        }
     }
 }
