@@ -12,6 +12,7 @@ namespace WebApp.DataContext.WebApp
         public WebAppDataContext()
             : base("name=WebAppDataContext")
         {
+            
         }
 
         public DbSet<User> Users { get; set; }
@@ -22,6 +23,7 @@ namespace WebApp.DataContext.WebApp
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
+
             modelBuilder.Entity<User>()
                 .HasMany(u => u.Roles)
                 .WithMany(r => r.Users)

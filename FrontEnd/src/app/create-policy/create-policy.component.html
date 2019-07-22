@@ -1,1 +1,89 @@
+<div class="container">
 
+    <div class="starter-template">
+
+        <div class="row">
+
+            <div class="col-md-12 mt-5">
+
+                <h1> {{ tittle }} </h1>
+
+                <form [formGroup]="policyForm" (ngSubmit)="onSubmit()">
+                    <div class="form-group">
+                        <label>Nombre Poliza</label>
+                        <input type="text" formControlName="PolicyName" class="form-control"  
+                            [ngClass]="{ 'is-invalid': submitted && f.PolicyName.errors }" />
+                        <div *ngIf="submitted && f.PolicyName.errors" class="invalid-feedback">
+                            <div *ngIf="f.PolicyName.errors.required">Por favor ingresa el nombre de la póliza.</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="PolicyDescription">Descripción Póliza</label>
+                        <textarea class="form-control" formControlName="PolicyDescription" rows="3" 
+                                [ngClass]="{ 'is-invalid': submitted && f.PolicyDescription.errors }"></textarea>
+                        <div *ngIf="submitted && f.PolicyDescription.errors" class="invalid-feedback">
+                            <div *ngIf="f.PolicyDescription.errors.required">Por favor ingresa la descripción de la póliza. Mínimo 10 caracteres. 
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                            <label for="PolicyPeriod">Período Póliza (Número de meses)</label>
+                            <input type="number" class="form-control" formControlName="PolicyPeriod" 
+                            [ngClass]="{ 'is-invalid': submitted && f.PolicyPeriod.errors }" />                            
+                            <div *ngIf="submitted && f.PolicyPeriod.errors" class="invalid-feedback">
+                                <div *ngIf="f.PolicyPeriod.errors.required">Por favor ingresa el período en meses de cobertura de la póliza. 
+                                </div>
+                            </div>
+                        </div>
+                    <div class="form-group">
+                        <label for="CoverageTypeId"> Tipo de Cobertura</label>
+                        <select class="form-control" formControlName="CoverageTypeId"
+                            [ngClass]="{ 'is-invalid': submitted && f.CoverageTypeId.errors }">
+                            <option value="">Seleccionar</option>
+                            <option value="1">Terremoto</option>
+                            <option value="2">Incendio</option>
+                            <option value="3">Robo</option>
+                            <option value="4">Perdida</option>
+                        </select>
+                        <div *ngIf="submitted && f.CoverageTypeId.errors" class="invalid-feedback">
+                            <div *ngIf="f.CoverageTypeId.errors.required">Por favor selecciona algún tipo de cubrimiento.</div>
+                        </div>
+                    </div>   
+                    <div class="form-group">
+                        <label>Inicio Vigencia Póliza</label>
+                        <input type="date" formControlName="PolicyStartDate" class="form-control"
+                            [ngClass]="{ 'is-invalid': submitted && f.PolicyStartDate.errors }" />
+                        <div *ngIf="submitted && f.PolicyStartDate.errors" class="invalid-feedback">
+                            <div *ngIf="f.PolicyStartDate.errors.required">Por favor ingresa la fecha de inicio de la vigencia de la póliza.</div>                            
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Precio Póliza</label>
+                        <input type="text" formControlName="PolicyPrice" class="form-control"
+                            [ngClass]="{ 'is-invalid': submitted && f.PolicyPrice.errors }" />
+                        <div *ngIf="submitted && f.PolicyPrice.errors" class="invalid-feedback">
+                            <div *ngIf="f.PolicyPrice.errors.required">Por favor ingresa el precio de la póliza.</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="RiskTypeId"> Tipo de Riesgo Póliza</label>
+                        <select class="form-control" formControlName="RiskTypeId"
+                            [ngClass]="{ 'is-invalid': submitted && f.RiskTypeId.errors }">
+                            <option value="">Seleccionar</option>
+                            <option value="1">Bajo</option>
+                            <option value="2">Medio</option>
+                            <option value="3">Medio - Alto</option>
+                            <option value="4">Alto</option>
+                        </select>
+                        <div *ngIf="submitted && f.RiskTypeId.errors" class="invalid-feedback">
+                            <div *ngIf="f.RiskTypeId.errors.required">Por favor selecciona el tipo de riesgo para la póliza.</div>
+                        </div>
+                    </div>                   
+                    <div class="form-group">
+                        <button [disabled]="loading" class="btn btn-primary">Guardar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

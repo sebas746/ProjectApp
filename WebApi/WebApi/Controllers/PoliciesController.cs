@@ -33,5 +33,13 @@ namespace WebApi.Controllers
             var response = _PoliciesService.GetPolicyById(PolicyId);
             return Ok(response);
         }
+
+        [HttpPost]
+        [Route("api/Policies/CreatePolicy/")]
+        public IHttpActionResult CreatePolicy(Policy policy)
+        {
+            var response = _PoliciesService.CreatePolicy(policy);
+            return Ok(response);
+        }
     }
 }

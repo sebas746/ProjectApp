@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using WebApp.DataAccess;
 using WebApp.DataContext.WebApp;
 using WebApp.Entities;
+using WebApp.Entities.DTO;
 using WebApp.Entities.Utilities;
 using WebApp.Interfaces.DAC;
 using WebApp.Interfaces.Service;
@@ -21,12 +22,13 @@ namespace WebApp.Services
             this._PoliciesDAC = PoliciesDAC;
         }
 
-        public List<Policy> GetAllPolicies()
+        public List<PolicyDTO> GetAllPolicies()
         {
             try
             {
-                var response = _PoliciesDAC.GetAllPolicies();
-                return response;
+                var policies = _PoliciesDAC.GetAllPolicies();
+                //var response = ConvertDTO.ConvertToPolicyDTO(policies);
+                return policies;
             }
             catch (Exception exc)
             {
@@ -40,6 +42,34 @@ namespace WebApp.Services
             {
                 var response = _PoliciesDAC.GetPolicyById(PolicyId);
                 return response;
+            }
+            catch (Exception exc)
+            {
+                throw exc;
+            }
+        }
+
+        public TransactionResponse CreatePolicy(Policy policy)
+        {
+            try
+            {
+                var transacResponse = new TransactionResponse();
+                var response = _PoliciesDAC.CreatePolicy(policy);
+
+                if (response)
+                {
+
+                    transacResponse.Message = "La póliza ha sido creada exitosamente.";
+                    transacResponse.Status = "Success";
+                }
+                else
+                {
+                    transacResponse.Message = "Error. La póliza no pudo ser creada.";
+                    transacResponse.Status = "Error";
+                }
+
+                return transacResponse;
+
             }
             catch (Exception exc)
             {

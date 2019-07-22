@@ -56,13 +56,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DTO\PolicyDTO.cs" />
     <Compile Include="LoginResponse.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TransactionResponse.cs" />
+    <Compile Include="Utilities\ConvertDTO.cs" />
     <Compile Include="Utilities\TokenManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\WebApp.DataContext\WebApp.DataContext.csproj">
+      <Project>{9AED2E16-4F83-4E9F-B9CE-357695E1644C}</Project>
+      <Name>WebApp.DataContext</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
