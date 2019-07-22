@@ -16,6 +16,9 @@ namespace WebApp.DataContext.WebApp
 
         public DbSet<User> Users { get; set; }
         public DbSet<Role> Roles { get; set; }
+        public DbSet<CoverageType> CoverageType { get; set; }
+        public DbSet<RiskType> RiskType { get; set; }
+        public DbSet<Policy> Policy { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

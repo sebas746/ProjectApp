@@ -41,8 +41,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DAC\IPoliciesDAC.cs" />
     <Compile Include="DAC\IAccountsDAC.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service\IPoliciesService.cs" />
     <Compile Include="Service\IAccountService.cs" />
   </ItemGroup>
   <ItemGroup>

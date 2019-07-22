@@ -41,10 +41,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="PoliciesService.cs" />
     <Compile Include="AccountService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\WebApp.DataAccess\WebApp.DataAccess.csproj">
+      <Project>{CA244BC4-4C4C-41CF-A8D4-284A7417C281}</Project>
+      <Name>WebApp.DataAccess</Name>
+    </ProjectReference>
     <ProjectReference Include="..\WebApp.DataContext\WebApp.DataContext.csproj">
       <Project>{9AED2E16-4F83-4E9F-B9CE-357695E1644C}</Project>
       <Name>WebApp.DataContext</Name>

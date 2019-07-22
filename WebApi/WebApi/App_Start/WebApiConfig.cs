@@ -27,6 +27,8 @@ namespace WebApi
             //Register Account Dependencies
             container.RegisterType<IAccountService, AccountService>();
             container.RegisterType<IAccountsDAC, AccountsDAC>();
+            container.RegisterType<IPoliciesService, PoliciesService>();
+            container.RegisterType<IPoliciesDAC, PoliciesDAC>();
 
             config.DependencyResolver = new UnityResolver(container);
 
