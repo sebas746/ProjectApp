@@ -50,12 +50,14 @@ namespace WebApi.Controllers
             return Ok(response);
         }
 
-        [HttpGet]
-        [Route("api/Policies/GetAllClients/")]
-        public IHttpActionResult GetAllClients()
+        [HttpPost]
+        [Route("api/Policies/InsertClientPolicies/")]
+        public IHttpActionResult InsertClientPolicies(Client client, List<Policy> policies)
         {
-            var response = _PoliciesService.GetAllClients();
-            return Ok(response);
+            //var response = _PoliciesService.GetAllClients();
+            return Ok("");
         }
+
+
     }
 }
