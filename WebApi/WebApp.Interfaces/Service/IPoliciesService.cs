@@ -14,5 +14,7 @@ namespace WebApp.Interfaces.Service
         List<PolicyDTO> GetAllPolicies();
         Policy GetPolicyById(int PolicyId);
         TransactionResponse CreatePolicy(Policy policy);
+        TransactionResponse DeletePolicy(int policyId);
+        List<ClientDTO> GetAllClients();
     }
 }

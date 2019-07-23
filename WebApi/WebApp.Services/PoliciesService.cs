@@ -76,5 +76,46 @@ namespace WebApp.Services
                 throw exc;
             }
         }
+
+        public TransactionResponse DeletePolicy(int policyId)
+        {
+            try
+            {
+                var transacResponse = new TransactionResponse();
+                var response = _PoliciesDAC.DeletePolicy(policyId);
+
+                if (response)
+                {
+
+                    transacResponse.Message = "La póliza ha sido eliminada exitosamente.";
+                    transacResponse.Status = "Success";
+                }
+                else
+                {
+                    transacResponse.Message = "Error. La póliza no pudo ser eliminada.";
+                    transacResponse.Status = "Error";
+                }
+
+                return transacResponse;
+
+            }
+            catch (Exception exc)
+            {
+                throw exc;
+            }
+        }
+
+        public List<ClientDTO> GetAllClients()
+        {
+            try
+            {
+                var policies = _PoliciesDAC.GetAllClients();                
+                return policies;
+            }
+            catch (Exception exc)
+            {
+                throw exc;
+            }
+        }
     }
 }

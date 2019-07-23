@@ -13,5 +13,7 @@ namespace WebApp.Interfaces.DAC
         List<PolicyDTO> GetAllPolicies();
         Policy GetPolicyById(int PolicyId);
         bool CreatePolicy(Policy policy);
+        bool DeletePolicy(int policyId);
+        List<ClientDTO> GetAllClients();
     }
 }

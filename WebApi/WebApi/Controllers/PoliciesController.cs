@@ -41,5 +41,21 @@ namespace WebApi.Controllers
             var response = _PoliciesService.CreatePolicy(policy);
             return Ok(response);
         }
+
+        [HttpGet]
+        [Route("api/Policies/DeletePolicy/")]
+        public IHttpActionResult DeletePolicy(int policyId)
+        {
+            var response = _PoliciesService.DeletePolicy(policyId);
+            return Ok(response);
+        }
+
+        [HttpGet]
+        [Route("api/Policies/GetAllClients/")]
+        public IHttpActionResult GetAllClients()
+        {
+            var response = _PoliciesService.GetAllClients();
+            return Ok(response);
+        }
     }
 }

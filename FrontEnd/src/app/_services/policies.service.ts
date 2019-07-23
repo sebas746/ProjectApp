@@ -20,4 +20,16 @@ export class PoliciesService {
     const url = environment.CreatePolicy;    
     return this.restService.ResolvePostRequest(url, policy);      
   }
+
+  public DeletePolicy(policyId: string) {
+    let url = environment.DeletePolicy;   
+    url = url.replace('[policyId]', policyId);
+
+    return this.restService.ResolveGetRequestObservable(url);
+  }
+
+  public GetAllClients() {
+    const url = environment.GetAllClients;    
+    return this.restService.ResolveGetRequestObservable(url);
+  }
 }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PoliciesService } from '../_services/policies.service';
+import { TransactionResponse } from '../_models/TransactionResponse';
 
 declare var jQuery: any;
 declare var $: any;
@@ -12,6 +13,7 @@ declare var $: any;
 export class PoliciesListComponent implements OnInit {
 
   private policiesList: any = [];
+  private transactionResponse: TransactionResponse;
 
   constructor(private _policiesService: PoliciesService) { }
 
@@ -23,7 +25,9 @@ export class PoliciesListComponent implements OnInit {
     //console.log(JSON.stringify( this.policiesList ));
   }
 
-  public onNewClick() {
-    alert('hola');
+  public deletePolicy(policyId) {
+    this._policiesService.DeletePolicy(policyId).subscribe((data: {}) => {      
+      console.log(data);
+    });
   }
 }

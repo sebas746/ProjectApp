@@ -21,7 +21,7 @@
                 <td>{{ policy.CoverageTypeName }}</td>
                 <td>{{ policy.RiskTypeName }}</td>
                 <td><a [routerLink]="['edit', policy.PolicyId]" class="btn btn-primary">Edit</a></td>
-                <td><a (click)="deleteBusiness(policy.PolicyId)" class="btn btn-danger">Delete</a></td>
+                <td><a (click)="deletePolicy(policy.PolicyId)" class="btn btn-danger">Delete</a></td>
             </tr>
         </tbody>
     </table>

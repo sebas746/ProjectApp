@@ -25,6 +25,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApp.Interfaces", "WebApp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApp.Services", "WebApp.Services\WebApp.Services.csproj", "{1D5C8D91-DA55-40EF-A659-CD4A56789ABD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApp.DAC.Test", "WebApp.DAC.Test\WebApp.DAC.Test.csproj", "{34CB7E7F-D3CD-4C54-A362-D71FC13609DE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -55,6 +57,10 @@ Global
 		{1D5C8D91-DA55-40EF-A659-CD4A56789ABD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1D5C8D91-DA55-40EF-A659-CD4A56789ABD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1D5C8D91-DA55-40EF-A659-CD4A56789ABD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{34CB7E7F-D3CD-4C54-A362-D71FC13609DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{34CB7E7F-D3CD-4C54-A362-D71FC13609DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{34CB7E7F-D3CD-4C54-A362-D71FC13609DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{34CB7E7F-D3CD-4C54-A362-D71FC13609DE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -66,6 +72,7 @@ Global
 		{57566793-7429-4228-B92B-636158D47C20} = {27616FEF-1EB7-4FCC-B866-AD1534D0FCB6}
 		{382D09C9-D0DA-4CA0-AF8E-0B050102F1FB} = {27616FEF-1EB7-4FCC-B866-AD1534D0FCB6}
 		{1D5C8D91-DA55-40EF-A659-CD4A56789ABD} = {FB1C4730-375D-4B1D-A907-E4ECFCE0DBF8}
+		{34CB7E7F-D3CD-4C54-A362-D71FC13609DE} = {14D49EAC-2B65-4435-B25C-9A193986CCE3}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {6C662774-62D7-4096-8C2C-2640AFE55FD7}

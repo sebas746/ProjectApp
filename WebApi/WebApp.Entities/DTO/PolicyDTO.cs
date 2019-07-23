@@ -17,7 +17,6 @@ namespace WebApp.Entities.DTO
         public int CoverageTypeId { get; set; }
         public System.DateTime PolicyStartDate { get; set; }
         public string CoverageTypeName { get; set; }
-        public string RiskTypeName { get; set; }
-        
+        public string RiskTypeName { get; set; }        
     }
 }

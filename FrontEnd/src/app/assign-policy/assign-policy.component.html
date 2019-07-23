@@ -1,0 +1,48 @@
+<div class="container">
+
+    <div class="starter-template">
+
+        <div class="row">
+
+            <div class="col-md-12 mt-5">
+
+                <h1> {{ tittle }} </h1>
+
+                <form [formGroup]="asssingPolicyForm" (ngSubmit)="onSubmit()">
+                    <div class="form-group">
+                        <label>Pólizas</label>
+                        <ng-multiselect-dropdown-angular7 [placeholder]="'Polizas'" [data]="policies"
+                            formControlName="Policies" [settings]="dropdownSettings"
+                            (onSelect)="onItemSelect($event)" (onSelectAll)="onSelectAll($event)">
+                        </ng-multiselect-dropdown-angular7>
+                    </div>
+                    <div class="form-group">
+                        <label>Nombre Cliente</label>
+                        <ng-autocomplete [data]="clients" [searchKeyword]="keyword"
+                            [ngClass]="{ 'is-invalid': submitted && f.Client.errors }"
+                            placeHolder="Nombre Cliente" (selected)='selectEvent($event)'
+                            (inputChanged)='onChangeSearch($event)' (inputFocused)='onFocused($event)'
+                            historyIdentifier="clients" [itemTemplate]="itemTemplate" formControlName='Client'
+                            [notFoundTemplate]="notFoundTemplate">
+                        </ng-autocomplete>
+
+                        <ng-template #itemTemplate let-item>
+                            <a [innerHTML]="item.ClientFullName"></a>
+                        </ng-template>
+
+                        <ng-template #notFoundTemplate let-notFound>
+                            <div [innerHTML]="notFound"></div>
+                        </ng-template>
+                    </div>
+                    <div *ngIf="submitted && f.Client.errors" class="invalid-feedback">
+                        <div *ngIf="f.Client.errors.required">Por favor ingresa alguna persona.
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <button [disabled]="loading" class="btn btn-primary">Guardar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

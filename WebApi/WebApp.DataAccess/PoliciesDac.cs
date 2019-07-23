@@ -53,5 +53,32 @@ namespace WebApp.DataAccess
                 return (result > 0) ? true : false;
             }
         }
+
+        public bool DeletePolicy(int policyId)
+        {
+            using (WebAppDataContext dbContext = new WebAppDataContext())
+            {
+                var policy = dbContext.Policy.Where(x => x.PolicyId == policyId).FirstOrDefault();
+                dbContext.Policy.Remove(policy);
+                var result = dbContext.SaveChanges();
+
+                return (result > 0) ? true : false;
+            }
+        }
+
+        public List<ClientDTO> GetAllClients()
+        {
+            using (WebAppDataContext dbContext = new WebAppDataContext())
+            {
+                var response = from client in dbContext.Client
+                               select new ClientDTO()
+                               {
+                                  ClientFullName = client.ClientFirstName + " " + client.ClientLastName,
+                                  ClientId = client.ClientId
+                               };
+
+                return response.ToList();
+            }
+        }
     }
 }

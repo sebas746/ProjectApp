@@ -12,6 +12,10 @@ import { ErrorInterceptor } from './_helpers/error.interceptor';
 import { CreatePolicyComponent } from './create-policy/create-policy.component';
 import { PoliciesListComponent } from './policies-list/policies-list.component';
 import { PolicyAssignComponent } from './policy-assign/policy-assign.component';
+import { AssignPolicyComponent } from './assign-policy/assign-policy.component';
+import {AutocompleteLibModule} from 'angular-ng-autocomplete';
+import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown-angular7';
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -20,13 +24,17 @@ import { PolicyAssignComponent } from './policy-assign/policy-assign.component';
     HomeComponent,
     CreatePolicyComponent,
     PoliciesListComponent,
-    PolicyAssignComponent
+    PolicyAssignComponent,
+    AssignPolicyComponent
   ],
-  imports: [
+  imports: [   
+    NgMultiSelectDropDownModule.forRoot(), 
+    AutocompleteLibModule,
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
