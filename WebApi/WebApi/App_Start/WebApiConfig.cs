@@ -6,6 +6,7 @@ using System.Web.Http.Cors;
 using Unity;
 using WebApi.App_Start;
 using WebApp.DataAccess;
+using WebApp.DataContext.WebApp;
 using WebApp.Interfaces.DAC;
 using WebApp.Interfaces.Service;
 using WebApp.Services;
@@ -25,10 +26,15 @@ namespace WebApi
             var container = new UnityContainer();
 
             //Register Account Dependencies
+            var context = new WebAppDataContext();
             container.RegisterType<IAccountService, AccountService>();
             container.RegisterType<IAccountsDAC, AccountsDAC>();
             container.RegisterType<IPoliciesService, PoliciesService>();
             container.RegisterType<IPoliciesDAC, PoliciesDAC>();
+            container.RegisterType<IClientService, ClientService>();
+            container.RegisterType<IClientDAC, ClientsDAC>();
+            container.RegisterType(typeof(IRepository<>), typeof(BaseRepository<>));
+
 
             config.DependencyResolver = new UnityResolver(container);
 

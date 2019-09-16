@@ -20,7 +20,7 @@ namespace WebApp.DataContext.WebApp
         public DbSet<CoverageType> CoverageType { get; set; }
         public DbSet<RiskType> RiskType { get; set; }
         public DbSet<Policy> Policy { get; set; }
-        public DbSet<Client> Client { get; set; }
+        public DbSet<Client> Clients { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

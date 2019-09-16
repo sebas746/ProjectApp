@@ -8,7 +8,7 @@ namespace WebApp.Entities.DTO
 {
     public class ClientDTO
     {
-        public string ClientId { get; set; }
+        public int ClientId { get; set; }
         public string ClientFullName { get; set; }
     }
 }

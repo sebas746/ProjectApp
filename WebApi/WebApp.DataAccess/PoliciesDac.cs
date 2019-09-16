@@ -70,7 +70,7 @@ namespace WebApp.DataAccess
         {
             using (WebAppDataContext dbContext = new WebAppDataContext())
             {
-                var response = from client in dbContext.Client
+                var response = from client in dbContext.Clients
                                select new ClientDTO()
                                {
                                   ClientFullName = client.ClientFirstName + " " + client.ClientLastName,

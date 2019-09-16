@@ -51,6 +51,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AccountsDAC.cs" />
+    <Compile Include="BaseRepository.cs" />
+    <Compile Include="ClientsDAC.cs" />
     <Compile Include="PoliciesDAC.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
