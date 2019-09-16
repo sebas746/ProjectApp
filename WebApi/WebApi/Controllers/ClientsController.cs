@@ -9,7 +9,7 @@ using WebApp.Interfaces.Service;
 
 namespace WebApi.Controllers
 {
-    
+    [Authorize]
     public class ClientsController : ApiController
     {
         public IClientService _ClientService;

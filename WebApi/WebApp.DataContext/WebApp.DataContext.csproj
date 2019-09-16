@@ -51,6 +51,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WebApp\Login.cs" />
     <Compile Include="WebApp\Client.cs" />
     <Compile Include="WebApp\RiskType.cs" />
     <Compile Include="WebApp\CoverageType.cs" />
